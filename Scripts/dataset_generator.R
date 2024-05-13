@@ -96,11 +96,17 @@ for(event in events){
 #Drop Terminated Records
 raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='2')
 
+
+
+
+
 write.table(raw_data_index_enrolment_arm_1, 'Data/Baseline.csv', sep = ",", row.names = FALSE)
 
 write.table(raw_data_index_hhc_investig_arm_1, 'Data/HHCI.csv', sep = ",", row.names = FALSE)
 
 write.table(raw_data_household_level_da_arm_1, 'Data/HH level Data.csv', sep = ",", row.names = FALSE)
+
+write.table(raw_data_test_operations_arm_1, 'Data/test operations.csv', sep = ",", row.names = FALSE)
 
 
 
