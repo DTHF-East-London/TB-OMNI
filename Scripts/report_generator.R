@@ -64,7 +64,8 @@ setCellValue(cells[["23.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw
 
 setCellValue(cells[["24.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Refused investigation' |
                                      raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Refused investigation' |
-                                     raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Refused investigation')))
+                                     raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Refused investigation'|
+                                       raw_data_index_hhc_investig_arm_1$vc_hhm_sc_sc=='No')))
 
 setCellValue(cells[["25.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Contacts does not reside in this household' |
                                      raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Contacts does not reside in this household' |
@@ -75,19 +76,13 @@ setCellValue(cells[["26.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw
                                      raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Household contact relocated')))
 
 
-setCellValue(cells[["27.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Household not found' |
-                                     raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Household not found' |
-                                     raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Household not found')))
-
+setCellValue(cells[["27.2"]], nrow(raw_data_index_hhc_investig_arm_1 %>% dplyr::filter(visit3_outcomes=='Household not found') %>% distinct(record_id)))
 
 setCellValue(cells[["28.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Household member not present' &
                                      (raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Household member not present') &
-                                     raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Household member not present')))
+                                     (raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Household member not present'))))
 
-setCellValue(cells[["29.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Household found but only index patient present and they do not have HHCs' |
-                                     raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Household found but only index patient present and they do not have HHCs' |
-                                     raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Household found but only index patient present and they do not have HHCs')))
-
+setCellValue(cells[["29.2"]], nrow(raw_data_index_hhc_investig_arm_1 %>% dplyr::filter(visit1_outcome=='Household found and knows index but index stays elsewhere') %>% distinct(record_id)))
 
 setCellValue(cells[["30.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Household found and knows index but index stays elsewhere' |
                                      raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Household found and knows index but index stays elsewhere' |
@@ -109,19 +104,19 @@ setCellValue(cells[["36.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw
 
 setCellValue(cells[["37.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$tb_treat_hhm_sc_sc=='Yes')))
 
-
+setCellValue(cells[["39.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='No')))
 
 
 ########################################Sample Collection
 setCellValue(cells[["42.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes')))
 
-setCellValue(cells[["43.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$hhm_pt_sc=='Yes')))
+setCellValue(cells[["43.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' & (raw_data_index_hhc_investig_arm_1$hhm_pt_sc=='Yes'))))
 
-setCellValue(cells[["44.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$hhm_bio_sc=='Yes')))
+setCellValue(cells[["44.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' & (raw_data_index_hhc_investig_arm_1$hhm_bio_sc=='Yes'))))
 
-setCellValue(cells[["45.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$hhm_up_sc=='Yes')))
+setCellValue(cells[["45.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' & (raw_data_index_hhc_investig_arm_1$hhm_up_sc=='Yes'))))
 
-setCellValue(cells[["46.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$hhm_cp_sc=='Yes')))
+setCellValue(cells[["46.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' & (raw_data_index_hhc_investig_arm_1$hhm_cp_sc=='Yes'))))
 
 setCellValue(cells[["48.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$hhm_sput_col_sc=='Yes' |
                                      raw_data_index_hhc_investig_arm_1$sputum_neb_sc=='Yes')))
@@ -274,11 +269,13 @@ setCellValue(cells[["79.2"]], nrow(subset(raw_data_test_operations_arm_1, raw_da
 
 
 ####################################Lab Results
-setCellValue(cells[["83.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$up_res_shipped=='Yes')))
+setCellValue(cells[["83.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' & (raw_data_index_hhc_investig_arm_1$up_res_shipped=='Yes'))))
 
-setCellValue(cells[["85.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$up_res=='Negative')))
+setCellValue(cells[["85.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' &  (raw_data_index_hhc_investig_arm_1$up_res=='Negative'))))
 
-setCellValue(cells[["86.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$up_res=='Positive')))
+setCellValue(cells[["86.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1,  raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' &  (raw_data_index_hhc_investig_arm_1$up_res=='Positive'))))
+
+setCellValue(cells[["88.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$con_out_hhm_sc=='Yes' & (raw_data_index_hhc_investig_arm_1$up_res=='Inconclusive'))))
 
 
 
