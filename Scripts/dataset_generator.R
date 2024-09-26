@@ -96,6 +96,7 @@ for(event in events){
 #Drop Terminated Records
 raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='2')
 
+raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='335')
 
 
 
