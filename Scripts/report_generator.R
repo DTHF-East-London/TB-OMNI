@@ -84,10 +84,7 @@ setCellValue(cells[["28.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw
 
 setCellValue(cells[["29.2"]], nrow(raw_data_index_hhc_investig_arm_1 %>% dplyr::filter(visit1_outcome=='Household found and knows index but index stays elsewhere') %>% distinct(record_id)))
 
-setCellValue(cells[["30.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Household found and knows index but index stays elsewhere' |
-                                     raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Household found and knows index but index stays elsewhere' |
-                                     raw_data_index_hhc_investig_arm_1$visit3_outcomes=='Household found and knows index but index stays elsewhere')))
-
+setCellValue(cells[["30.2"]], nrow(raw_data_index_hhc_investig_arm_1 %>% dplyr::filter(visit1_outcome=='Household found and knows index but index stays elsewhere') %>% distinct(record_id)))
 
 setCellValue(cells[["31.2"]], nrow(subset(raw_data_index_hhc_investig_arm_1, raw_data_index_hhc_investig_arm_1$visit1_outcome=='Household found but claims no relation to index patient' |
                                      raw_data_index_hhc_investig_arm_1$visit2_outcomes=='Household found but claims no relation to index patient' |
