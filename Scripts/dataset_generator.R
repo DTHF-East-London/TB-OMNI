@@ -103,6 +103,7 @@ raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, r
 raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='271')
 raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='271')
 raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='296')
+raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='303')
 
 write.table(raw_data_index_enrolment_arm_1, 'Data/Baseline.csv', sep = ",", row.names = FALSE)
 
