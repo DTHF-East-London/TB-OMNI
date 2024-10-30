@@ -95,10 +95,13 @@ for(event in events){
 
 #Drop Terminated Records
 raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='2')
-
+raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='2')
 raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='335')
-
-
+raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='335')
+raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='37')
+raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='37')
+raw_data_index_enrolment_arm_1 <- subset(raw_data_index_enrolment_arm_1, record_id!='271')
+raw_data_index_hhc_investig_arm_1 <- subset(raw_data_index_hhc_investig_arm_1, record_id!='271')
 
 
 write.table(raw_data_index_enrolment_arm_1, 'Data/Baseline.csv', sep = ",", row.names = FALSE)
